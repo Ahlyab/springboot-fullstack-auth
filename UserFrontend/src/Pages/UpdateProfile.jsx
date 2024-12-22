@@ -7,7 +7,6 @@ function UpdateProfile() {
     firstName: '',
     lastName: '',
     email: '',
-    password: '',
   });
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
@@ -20,7 +19,6 @@ function UpdateProfile() {
         firstName: user.firstName || '',
         lastName: user.lastName || '',
         email: user.email || '',
-        password: '', // Password is not stored locally for security reasons
       });
     } else {
       navigate('/');
@@ -106,22 +104,7 @@ function UpdateProfile() {
               onChange={handleChange}
             />
           </div>
-          <div>
-            <label htmlFor="password" className="sr-only">
-              Password
-            </label>
-            <input
-              id="password"
-              name="password"
-              type="password"
-              autoComplete="new-password"
-              required
-              className="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 text-gray-900 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
-              placeholder="Password"
-              value={formData.password}
-              onChange={handleChange}
-            />
-          </div>
+
           <div>
             <button
               type="submit"
